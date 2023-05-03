@@ -51,6 +51,15 @@ const content = `
     </ul>
   
 `;
+let navList = ["Home","Profile","Infromation","About"]
+let navContent = `<ul>
+
+<li class="nav-item">${navList[0]}</li>
+<li class="nav-item">${navList[1]}</li>
+<li class="nav-item">${navList[2]}</li>
+<li class="nav-item">${navList[3]}</li>
+
+</ul>`;
 
 const main = document.querySelector(".maincontent");
 
@@ -60,3 +69,12 @@ newArticle.setAttribute("id", "everyday");
 newArticle.innerHTML = content;
 
 main.append(newArticle);
+
+
+const body = document.querySelector("body");
+
+const nav = document.createElement("nav");
+nav.classList.add("nav");
+nav.setAttribute("id","nav")
+nav.innerHTML = navContent;
+body.prepend(nav);

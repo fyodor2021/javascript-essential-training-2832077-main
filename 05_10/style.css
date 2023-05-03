@@ -1,0 +1,11 @@
+ul{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+
+}
+.nav-item{
+    margin: 20px;
+    text-decoration: none;
+    list-style-type: none;
+}
