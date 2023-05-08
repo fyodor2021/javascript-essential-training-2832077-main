@@ -1,6 +1,7 @@
 /**
  * Challenge: Create an event listener
  * - Find the two elements with the .backpack__strap class.
+ 
  * - Create a function to output the strap length form.
  * - Iterate through each item with the .backpack__strap class.
  * - Capture the value of the data-side attribute to indicate the strap side.
@@ -91,3 +92,52 @@ const main = document.querySelector(".maincontent");
 backpackList.forEach((backpack) => {
   main.append(backpack);
 });
+
+
+
+
+
+
+// let straps = document.querySelectorAll(".backpack__strap");
+// straps.forEach(strap => {
+//     let form = document.createElement("form");
+//     let field = document.createElement("input");
+//     let submit = document.createElement("input");
+//     let strapSide = strap.getAttribute("data-side");
+//     submit.setAttribute("type", "submit");
+//     submit.setAttribute("class", "strap-button")
+//     submit.style.fontSize = "20px"
+//     field.setAttribute("type", "text");
+//     field.style.fontSize = "20px";
+
+//     field.setAttribute("id", "strap-" + strap.parentElement.parentElement.id + "-" +strapSide);
+//     field.style.marginRight = "5px";
+//     strap.append(form)
+//     strap.append(field);
+//     strap.append(submit)
+// });
+
+// let strapButtons = document.querySelectorAll(".strap-button");
+// strapButtons.forEach(button => {
+//   button.addEventListener("click", (event) => {
+//     let strapSide = button.parentElement.getAttribute("data-side");
+//     let span = document.querySelectorAll(".backpack__strap span");
+//     let fieldValue = document.querySelector("#strap-"+
+//      button.parentElement.parentElement.parentElement.id+
+//       "-" + strapSide).value;
+//     console.log(fieldValue)
+//     let parentId = button.parentElement.parentElement.parentElement.id;
+//     let backpackObject = backpackObjectArray.find(({id}) => id === parentId);
+//     strapSide === "left" 
+//     ? backpackObject.strapLength.left = fieldValue
+//     : backpackObject.strapLength.right = fieldValue;
+    
+    
+//     console.log(span)
+
+    
+//   })
+// })
+
+
+
