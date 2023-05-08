@@ -6,7 +6,7 @@
  * - Append each backpack object to the <main> element.
  */
 import Backpack from "./components/Backpack.js";
-
+import backpackObjectArray from "./components/data.js";
 const everydayPack = new Backpack(
   "pack01",
   "Everyday Backpack",
@@ -57,3 +57,43 @@ newArticle.setAttribute("id", "everyday");
 newArticle.innerHTML = content;
 
 main.append(newArticle);
+
+console.log(backpackObjectArray)
+
+let elementList = document.createElement("ul");
+const backpackArr = backpackObjectArray.map(item =>{
+  let packList = document.createElement("li");
+  packList.style.listStyleType = "none";
+  for(const key in item){ 
+    let li = document.createElement("li");
+    if(key != "image"){
+      li.append(`${key} :`,` ${item[key]}`);
+      li.style.listStyleType = "none"
+      packList.append(li);
+    }
+    if(key == "strapLength"){
+      let ul = document.createElement("ul");
+      for(const strap in item[key]){
+        console.log(strap)
+        let straps = document.createElement("li");
+        straps.innerHTML = strap + " : " + key[strap];
+        ul.append(straps);
+      }
+      
+      packList.append(ul);
+    }
+    
+  }
+
+
+      return packList;
+});
+
+
+backpackArr.forEach(item =>{
+  
+  main.append(item);
+  const spacer = document.createElement("br");
+  main.append(spacer)
+})
+
